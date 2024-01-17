@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is form</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+        <table>
+            {{data.as_table}}
+        </table>
+        <tr>
+
+            <tr><input type="submit" name="send" value="Resiter"></tr>
+        </tr>
+        
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+<h3 class="mt-5">update task</h3>
+<div class="col-md-8 mt-5 m-auto">
+    {% for i in data %}
+    <form method="POST" action="/edit/{{i.id}}">
+        {% csrf_token %}
+        <form>
+            
+            <div class="form-group">
+              <label for="tid">title</label>
+              <input type="text" class="form-control" name="t" id="tid" value="{{i.title}}" required>
+            </div>
+            
+            
+            <div class="form-group">
+              <label for="detid">details</label>
+              <textarea class="form-control" name="det" id="detid" rows="3" required>{{i.datails}}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="dtid">date</label>
+                <input type="date" class="form-control" name="dt" id="dtid" >
+                <h3>{{i.date}}</h3>
+              </div>
+
+            <div class="form-group mb-3">
+                
+                <input type="submit" class="form-control btn btn-primary" name="send" value="UPDATE" >
+            </div>
+          </form>
+          
+    </form>
+    {% endfor %}
+</div>
+
+{% endblock 'main' %}

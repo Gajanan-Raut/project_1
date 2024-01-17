@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+<div class="col-md-3 mt-5">
+
+
+    <h3>Dashboard</h3>
+
+   <a href="/create_task"><button type="button" class="btn btn-primary">click me</button></a> 
+
+</div>
+<div class="col-md-9 mt-5">
+    <table class="table">
+
+        <tr>
+            <th>Title</th>
+            <th>Details</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>delete</th>
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            <td>{{i.title}}</td>
+            <td>{{i.datails}}</td>
+            <td>{{i.date}}</td>
+            <td><a href="edit/{{i.id}}" ><button type="button" class="btn btn-primary">Edit</button></a></td>
+            <td><a href="delete/{{i.id}}" ><button type="button" class="btn btn-warning">Delete</button></a></td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+</div>
+
+<!-- 
+{% if res == 0 %}
+    <h5>this is even number</h5>
+{% else %}
+    <h5>this is odd number</h5>
+{% endif %} -->
+
+
+
+
+{% endblock 'main' %}
+

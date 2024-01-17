@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+<div class="col-md-3 mt-5">
+
+
+    <h3>Dashboard</h3>
+
+   <a href="/dashboard"><button type="button" class="btn btn-primary">click me</button></a> 
+
+<br>
+   <a href="/cdashboard">All</a><br>
+   <br>
+   <h3>SORT BY</h3>
+   
+   <hr>
+   <h5>By Fees</h5>
+   
+   <a href="/ltoh">Low to High</a><br>
+   <a href="/htol">High to Low</a>
+
+</div>
+<div class="col-md-9 mt-5">
+    <table class="table">
+
+        <tr>
+            <th>Course Name</th>
+            <th>Course duration</th>
+            <th>Course categary</th>
+            <th>Course price</th>
+            <th>delete</th>
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            <td>{{i.cname}}</td>
+            <td>{{i.cdur}}</td>
+            <td>{{i.ccat}}</td>
+            <td>{{i.cprice}}</td>
+            <td><a href="edits/{{i.id}}" ><button type="button" class="btn btn-primary">Edit</button></a></td>
+            <td><a href="deleted/{{i.id}}" ><button type="button" class="btn btn-warning">Delete</button></a></td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+</div>
+
+<!-- 
+{% if res == 0 %}
+    <h5>this is even number</h5>
+{% else %}
+    <h5>this is odd number</h5>
+{% endif %} -->
+
+
+
+
+{% endblock 'main' %}
+
