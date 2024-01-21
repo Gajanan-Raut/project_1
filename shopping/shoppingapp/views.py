@@ -208,3 +208,6 @@ def resiter(request):
     else:
         fm=UserCreationForm()
         return render(request,'signup.html',{'form':fm})
+    
+def navbar(request):
+    return render(request,'navbar.html')

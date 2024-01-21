@@ -21,5 +21,6 @@ urlpatterns = [
     path('studs',views.studs),
     path('cform',views.stude),
     path('cview',views.cview.as_view()),
-    path('register',views.resiter)
+    path('register',views.resiter),
+    path('navbar',views.navbar)
 ]
